@@ -1,3 +1,14 @@
+# swift package manager 
+This fork works with SPM.Don't need the 'bridge header', just add the package and use:
+```swift
+import UnrarKit
+
+let archive = try URKArchive(url: localFileUrl)
+try archive.extractFiles(to: toPathStr, overwrite: true)
+
+```
+
+
 [![Build Status](https://travis-ci.com/abbeycode/UnrarKit.svg?branch=master)](https://travis-ci.com/abbeycode/UnrarKit)
 [![Cocoapods](https://img.shields.io/cocoapods/v/UnrarKit.svg)](https://cocoapods.org/pods/UnrarKit)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
