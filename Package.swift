@@ -1,4 +1,5 @@
-// swift-tools-version: 5.6
+// swift-tools-version: 5.6a
+
 import PackageDescription
 
 let package = Package(
@@ -14,9 +15,20 @@ let package = Package(
             name: "UnrarKit",
             dependencies: ["unrar-lib"],
             path: "Classes",
-            publicHeadersPath: "public-headers",
+            publicHeadersPath: ".",
+            cSettings: [
+                .headerSearchPath("."),
+                .headerSearchPath("Categories"),
+                .headerSearchPath("../Libraries/unrar"),
+                .headerSearchPath("../../Libraries/unrar"),
+            ],
+            cxxSettings: [
+                .headerSearchPath("."),
+                .headerSearchPath("Categories"),
+                .headerSearchPath("../Libraries/unrar"),
+                .headerSearchPath("../../Libraries/unrar"),
+            ],
             linkerSettings: [
-//                .linkedLibrary("c++"),
                 .linkedLibrary("z")
             ]),
         .target(
@@ -37,7 +49,7 @@ let package = Package(
                 "arcread.cpp",
                 "unicode.cpp",
                 "system.cpp",
-                //"isnt.cpp",
+                // "isnt.cpp", // 保持注释掉，避免 Windows 特定代码
                 "crypt.cpp",
                 "crc.cpp",
                 "rawread.cpp",
@@ -72,8 +84,10 @@ let package = Package(
                 "rs.cpp",
                 "scantree.cpp",
                 "qopen.cpp",
-                "dll.cpp"],
-            publicHeadersPath: "public-headers",
+                "dll.cpp"
+            ],
+            // 暴露必要的头文件给其他 target
+            publicHeadersPath: ".",
             cSettings: [
                 .unsafeFlags([
                     "-Wno-return-type",
@@ -85,17 +99,21 @@ let package = Package(
                     "-Wno-switch",
                     "-Wno-unused-command-line-argument",
                     "-Wno-strict-prototypes",
-                    "-Wno-conditional-uninitialized"]),
-                .headerSearchPath(".")],
+                    "-Wno-conditional-uninitialized"
+                ]),
+                .headerSearchPath("."),
+                .headerSearchPath("../Classes") // 添加对 Classes 目录的搜索路径
+            ],
             cxxSettings: [
                 .define("SILENT"),
                 .define("RARDLL"),
-                .headerSearchPath(".")],
-            linkerSettings: [.linkedLibrary("c++")]),
-//        .testTarget(
-//            name: "UnrarKitTests",
-//            dependencies: ["UnrarKit"],
-//            path: "Tests"
-//        ),
+                .define("_UNIX"), // 添加 Unix 平台定义
+                .define("_APPLE"), // 添加 Apple 平台定义
+                .headerSearchPath("."),
+                .headerSearchPath("../Classes") // 添加对 Classes 目录的搜索路径
+            ],
+            linkerSettings: [
+                .linkedLibrary("c++")
+            ]),
     ]
 )

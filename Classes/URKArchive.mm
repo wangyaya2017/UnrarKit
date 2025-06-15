@@ -7,12 +7,12 @@
 #import "URKArchive.h"
 #import "URKFileInfo.h"
 #import "UnrarKitMacros.h"
-#import "NSString+UnrarKit.h"
+#import "./Categories/NSString+UnrarKit.h"
 
 #import "zlib.h"
 
 RarHppIgnore
-#import "rar.hpp"
+#import "../Libraries/unrar/rar.hpp"
 #pragma clang diagnostic pop
 
 

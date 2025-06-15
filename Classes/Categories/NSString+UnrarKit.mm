@@ -5,10 +5,11 @@
 //
 
 #import "NSString+UnrarKit.h"
-#import "UnrarKitMacros.h"
+#import "../UnrarKitMacros.h"
 
 RarHppIgnore
-#import "rar.hpp"
+#import "../../Libraries/unrar/rar.hpp"
+
 #pragma clang diagnostic pop
 
 @implementation NSString (UnrarKit)

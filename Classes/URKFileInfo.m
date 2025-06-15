@@ -6,7 +6,7 @@
 #import "URKFileInfo.h"
 #import "UnrarKitMacros.h"
 
-#import "NSString+UnrarKit.h"
+#import "./Categories/NSString+UnrarKit.h"
 
 @implementation URKFileInfo
 
