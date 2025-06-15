@@ -84,8 +84,6 @@ let package = Package(
                 "qopen.cpp",
                 "dll.cpp"
             ],
-            // 暴露必要的头文件给其他 target
-            publicHeadersPath: ".",
             cSettings: [
                 .unsafeFlags([
                     "-Wno-return-type",
