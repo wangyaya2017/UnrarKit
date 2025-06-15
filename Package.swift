@@ -1,4 +1,4 @@
-// swift-tools-version: 5.6a
+// swift-tools-version: 5.6
 
 import PackageDescription
 
@@ -19,14 +19,12 @@ let package = Package(
             cSettings: [
                 .headerSearchPath("."),
                 .headerSearchPath("Categories"),
-                .headerSearchPath("../Libraries/unrar"),
-                .headerSearchPath("../../Libraries/unrar"),
+                .headerSearchPath("../Libraries/unrar")
             ],
             cxxSettings: [
                 .headerSearchPath("."),
                 .headerSearchPath("Categories"),
-                .headerSearchPath("../Libraries/unrar"),
-                .headerSearchPath("../../Libraries/unrar"),
+                .headerSearchPath("../Libraries/unrar")
             ],
             linkerSettings: [
                 .linkedLibrary("z")
