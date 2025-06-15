@@ -4,9 +4,9 @@
 //
 //
 
-#import "URKArchive.h"
-#import "URKFileInfo.h"
-#import "UnrarKitMacros.h"
+#import "include/URKArchive.h"
+#import "include/URKFileInfo.h"
+#import "include/UnrarKitMacros.h"
 #import "./Categories/NSString+UnrarKit.h"
 
 #import "zlib.h"

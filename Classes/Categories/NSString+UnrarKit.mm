@@ -5,7 +5,7 @@
 //
 
 #import "NSString+UnrarKit.h"
-#import "../UnrarKitMacros.h"
+#import "../include/UnrarKitMacros.h"
 
 RarHppIgnore
 #import "../../Libraries/unrar/rar.hpp"

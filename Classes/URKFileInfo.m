@@ -3,8 +3,8 @@
 //  UnrarKit
 //
 
-#import "URKFileInfo.h"
-#import "UnrarKitMacros.h"
+#import "include/URKFileInfo.h"
+#import "include/UnrarKitMacros.h"
 
 #import "./Categories/NSString+UnrarKit.h"
 

@@ -9,11 +9,11 @@
 #import "UnrarKitMacros.h"
 
 RarosHppIgnore
-#import "../Libraries/unrar/raros.hpp"
+#import "../../Libraries/unrar/raros.hpp"
 #pragma clang diagnostic pop
 
 DllHppIgnore
-#import "../Libraries/unrar/dll.hpp"
+#import "../../Libraries/unrar/dll.hpp"
 #pragma clang diagnostic pop
 
 @class URKFileInfo;

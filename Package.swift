@@ -15,7 +15,7 @@ let package = Package(
             name: "UnrarKit",
             dependencies: ["unrar-lib"],
             path: "Classes",
-            publicHeadersPath: ".",
+            publicHeadersPath: "include",
             cSettings: [
                 .headerSearchPath("."),
                 .headerSearchPath("Categories"),
